@@ -19,8 +19,12 @@ interface fibonacci
 {
     void fibo(int n1);
 }
+interface all extends Arithmetic,factorial,fibonacci
+{
 
- class calci1 implements Arithmetic,factorial,fibonacci
+}
+
+ class calci1 implements all
 {
     public int add(int a,int b)
     {
@@ -89,52 +93,61 @@ class interface1
         switch(ch)
         {
             case 1:
-            System.out.println("\n Enter the value1 ");
+            while(true)
+        {
+            System.out.println("Enter the value1 ");
             a=sc.nextInt();
-            System.out.println("\n Enter the value2");
+            System.out.println(" Enter the value2");
             b=sc.nextInt();
-            try{
-            if(a==0||b==0) { throw new Exception ("\n The values you entered are not appropriate");
+         
+            if(a==0 && b==0) 
+            { 
+                System.out.println("The values you entered are not appropriate");
+                continue;
             }
-            }
-            catch(Exception e)
-            {
-              System.out.println("Exception: "+e.getMessage());
-              return;
-            }
+            
             System.out.println("The Addition of value1 & value2 is"+" "+c1.add(a,b));
             System.out.println("The Substraction of value1 & value2 is"+" "+c1.sub(a,b));
             System.out.println("The Multiplication of value1 & value2 is"+" "+c1.mul(a,b));
+            try{
             System.out.println("The Division of value1 & value2 is"+" "+c1.div(a,b));
+            }
+            catch(Exception e)
+            {
+                System.out.println("Exception :"+e.getMessage());
+            }
+            break;
+        }
             break;
 
             case 2:
-            System.out.println("\n Enter the number to find its factorial");
+            while(true){
+            System.out.println(" Enter the number to find its factorial");
             n=sc.nextInt();
-             try{
-            if(n==0) { throw new Exception ("\n The value you entered is not appropriate (Enter other than 0)");
-            }
-            }
-            catch(Exception e)
+            if(n==0)
             {
-              System.out.println("Exception: "+e.getMessage());
+               System.out.println(" The value you entered is 0 reEnter the value again");
+               continue;
             }
-            System.out.println("\n The factorial of "+n +" "+"is"+" "+c1.fact(n));
+            System.out.println(" The factorial of "+n +" "+"is"+" "+c1.fact(n));
             break;
+           }
+           break;
             
             case 3:
-            System.out.println("\n Enter the number to find its fibonacci series");
+            while(true){
+            System.out.println(" Enter the number to find its fibonacci series");
             n1=sc.nextInt();
-            try{
-            if(n1==0) { throw new Exception ("\n The value you entered is not appropriate (Enter other than 0)");
-            }
-            }
-            catch(Exception e)
-            {
-              System.out.println("Exception: "+e.getMessage());
-            }
+              if(n1==0)
+              {
+                System.out.println(" The value you entered is 0 reEnter the value again");
+                continue;
+              }
+            
             c1.fibo(n1);
             break;
+        }
+        break;
             
             case 4:
             break;
