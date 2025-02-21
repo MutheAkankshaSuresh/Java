@@ -21,6 +21,10 @@ interface fibonacci
 }
 interface all extends Arithmetic,factorial,fibonacci
 {
+    default void greet()
+    {
+        System.out.println("Hello Welcome to my Interface Program");
+    }
 
 }
 
@@ -86,7 +90,7 @@ class interface1
         calci1 c1=new calci1();
         Scanner sc=new Scanner(System.in);
        do{
-
+        c1.greet();
         System.out.println("\n Enter your choice");
         System.out.println(" 1.Arithmetic Operation \n 2.Factorial Operation \n 3.Fibonacci Series \n 4.Exit");
         ch=sc.nextInt();
