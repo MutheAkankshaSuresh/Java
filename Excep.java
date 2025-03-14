@@ -4,10 +4,10 @@ import java.util.*;
 class Excep
 {
         
-;       public static void main(String args[])
+       public static void main(String args[])
        {
         Scanner sc=new Scanner(System.in);
-         int model_no,size,pp;
+         int model_no,size,pp,a,b,c;
          System.out.println("\n Enter the Television Details");
          while(true){ 
          System.out.println("Enter the Model number of Television [under(9999)]"); 
@@ -41,7 +41,33 @@ class Excep
          {
             System.out.println("User-defined Model_ppException: " + e.getMessage()); 
          }
+         finally
+         {
+            System.out.println("Wowwwwww your Order of Television is placed ...Soon you will received it");
+         }
         }
+       
+      
+      //Default Exception
+      int arr[]={5,6,7,4,3};
+      try
+      {
+       System.out.println(arr[6]);
+      }
+      catch(ArrayIndexOutOfBoundsException e)
+      {
+          System.out.println("The array is OUt Of Bound");
+      }
+      
+       
+      //Existing Exception
+      System.out.println("Enter a value");
+      a=sc.nextInt();
+      System.out.println("Enter b value");
+      b=sc.nextInt();
+       c=a/b;
+      
+        
 
        }  
        
@@ -53,7 +79,6 @@ class Excep
              throw new Model_noException("The Model Number of television is not valid");
             
           }
-
           else{
             System.out.println("Thank you for Entering valid Model_Number");
           }
@@ -107,3 +132,4 @@ class Model_ppException extends Exception{
         super(msg2);
     }
 }
+
